@@ -5,6 +5,15 @@
   <dd><%= @user.name  %></dd>
   <dt>Email</dt>
   <dd><%= @user.email  %></dd>
+  <dt>Status</dt>
+  <dd><%= status_tag(@user.status, :true_text => 'Active', :false_text => 'In-Active') %></dd>
 </dl>
+<h3>Stats</h3>
+<table width="25%">
+  <tr>
+	<td>Articles Posted</td>
+	<td align="right"><%= @user.articles.size %></td>
+  </tr>
+</table>
 <p><%= link_to("Edit User", edit_user_path(@user), :class => 'action edit') %> |
   <%= link_to("Delete User", {:action => 'delete', :id => @user.id}, :class => 'action delete') %></p>

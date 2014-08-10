@@ -2,8 +2,6 @@
 <h2>New User</h2>
 
 <%= form_for(:user, :url =>{:action => 'create'}) do |f| %>
-  <%= f.text_field(:name) %>
-  <%= f.text_field(:email) %>
-
+  <%= render(:partial => "form", :locals => {:f => f}) %>
   <%= submit_tag('Create User') %>
 <% end %>

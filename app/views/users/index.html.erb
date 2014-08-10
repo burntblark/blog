@@ -1,10 +1,11 @@
 <div class="users index">
   <h2>Users</h2>
   <%= link_to("Add New User", new_user_path, :class => 'action new') %>
-  
+  <p class="info"><%= pluralize(@users.size, 'user') %> found</p>
   <table class="listing" summary="User list">
 	<thead>
 	  <tr>
+		<th>Status</th>
 		<th>Name</th>
 		<th>Email Address</th>
 		<th>Articles</th>
@@ -14,6 +15,7 @@
 	<tbody>
 	  <% @users.each do |user| %>
 	  <tr>
+		<td><%= status_tag(user.status, :true_text => 'Active', :false_text => 'In-Active') %></td>
 		<td><%= user.name %></td>
 		<td><%= user.email %></td>
 		<td><%= user.articles.size %></td>

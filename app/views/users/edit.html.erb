@@ -1,0 +1,9 @@
+<p><%= link_to("<< Back to List", users_path(), {:class => 'back-link'}) %></p>
+<h2>Update User</h2>
+
+<%= form_for(:user, :url =>{:action => 'update', :id => @user.id}, :method => 'patch') do |f| %>
+  <%= f.text_field(:name) %>
+  <%= f.text_field(:email) %>
+
+  <%= submit_tag('Update User') %>
+<% end %>

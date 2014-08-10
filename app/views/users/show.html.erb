@@ -1,0 +1,10 @@
+<p><%= link_to("<< Back to List", users_path(), {:class => 'back-link'}) %></p>
+<h2>Show User</h2>
+<dl>
+  <dt>Name</dt>
+  <dd><%= @user.name  %></dd>
+  <dt>Email</dt>
+  <dd><%= @user.email  %></dd>
+</dl>
+<p><%= link_to("Edit User", edit_user_path(@user), :class => 'action edit') %> |
+  <%= link_to("Delete User", {:action => 'delete', :id => @user.id}, :class => 'action delete') %></p>

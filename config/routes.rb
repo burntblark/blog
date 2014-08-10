@@ -1,9 +1,21 @@
 Rails.application.routes.draw do
+  get 'users/index'
+
+  get 'users/show'
+
+  get 'users/new'
+
+  get 'users/edit'
+
+  get 'users/delete'
+
   get 'welcome/index', as: 'welcome'
 	
 	resources :articles do
 		resources :comments
 	end
+	
+	resources :users
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

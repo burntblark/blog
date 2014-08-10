@@ -1,0 +1,25 @@
+<div class="users index">
+  <h2>Users</h2>
+  <%= link_to("Add New User", new_user_path, :class => 'action new') %>
+  
+  <table class="listing" summary="User list">
+	<thead>
+	  <tr>
+		<th>Name</th>
+		<th>Actions</th>
+	  </tr>
+	</thead>
+	<tbody>
+	  <% @users.each do |user| %>
+	  <tr>
+		<td><%= user.name %></td>
+		<td>
+		  <%= link_to("Show", user_path(user), {:class => 'action show'}) %>
+		  <%= link_to("Edit", edit_user_path(user), :class => 'action edit') %>
+		  <%= link_to("Delete", {:action => 'delete', :id => user.id}, :class => 'action delete') %>
+		</td>
+	  </tr>
+	  <% end %>
+	</tbody>
+  </table>
+</div>

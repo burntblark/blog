@@ -1,0 +1,9 @@
+<p><%= link_to("<< Back to List", users_path(), {:class => 'back-link'}) %></p>
+<h2>New User</h2>
+
+<%= form_for(:user, :url =>{:action => 'create'}) do |f| %>
+  <%= f.text_field(:name) %>
+  <%= f.text_field(:email) %>
+
+  <%= submit_tag('Create User') %>
+<% end %>

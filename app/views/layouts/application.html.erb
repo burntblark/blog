@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Blog</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-<%= link_to 'Welcome', welcome_path %>
-<%= yield %>
+  <head>
+	<title>Blog</title>
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	<%= csrf_meta_tags %>
+  </head>
+  <body>
+	<% if !flash[:notice].blank? %>
+	  <div class="alert notice">
+		<%= flash[:notice] %>
+	  </div>
+	<% end %>
+	<%= link_to 'Welcome', welcome_path %>
+	<%= yield %>
 
-</body>
+  </body>
 </html>
